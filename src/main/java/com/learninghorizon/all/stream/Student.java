@@ -3,6 +3,9 @@ package com.learninghorizon.all.stream;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * NOTE: There are no checks for <b>null</b>.
+ * */
 public final class Student implements Comparable<Student>{
 	
 	private final Name name;
