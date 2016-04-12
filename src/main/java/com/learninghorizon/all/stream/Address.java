@@ -142,11 +142,11 @@ public final class Address {
 	public String toString() {
 
 		Map<String, Object> map = new LinkedHashMap<String, Object>();
-		map.put("Address1", this.address1());
-		map.put("Address2", this.address2());
-		map.put("Pincode", this.pinCode());
-		map.put("City", this.city());
-		map.put("Country", this.country());
+		map.put("address1", this.address1());
+		map.put("address2", this.address2());
+		map.put("pincode", this.pinCode());
+		map.put("city", this.city());
+		map.put("country", this.country());
 		return map.toString();
 	}
 }

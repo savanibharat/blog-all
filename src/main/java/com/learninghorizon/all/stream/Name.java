@@ -67,8 +67,8 @@ public final class Name {
 	public String toString() {
 		
 		Map<String, Object> map = new LinkedHashMap<String, Object>();
-		map.put("Lastname", this.lastName());
-		map.put("Firstname", this.firstName());
+		map.put("lastName", this.lastName());
+		map.put("firstName", this.firstName());
 		return map.toString();
 	}
 

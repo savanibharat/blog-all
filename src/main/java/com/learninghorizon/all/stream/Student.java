@@ -94,9 +94,9 @@ public final class Student implements Comparable<Student>{
 	@Override
 	public String toString(){
 		Map<String, String> map = new LinkedHashMap<String, String>();
-		map.put("Student Name", this.name.toString());
-		map.put("Student Address", this.address.toString());
-		map.put("Student age", this.age.toString());
+		map.put("studentName", this.name.toString());
+		map.put("studentAddress", this.address.toString());
+		map.put("studentAge", this.age.toString());
 		map.put("favoriteNumber", String.valueOf(this.favoriteNumber));
 		map.put("gender", this.gender.toString());
 		return map.toString();
