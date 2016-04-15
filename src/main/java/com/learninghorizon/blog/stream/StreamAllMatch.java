@@ -36,13 +36,13 @@ public class StreamAllMatch {
 		
 		boolean allMatches =
 
-					list.stream()
-						.allMatch(new Predicate<Number>() {
-							@Override
-							public boolean test(Number value) {
-								return value != null;
-							}
-						});
+			list.stream()
+				.allMatch(new Predicate<Number>() {
+					@Override
+					public boolean test(Number value) {
+						return value != null;
+					}
+				});
 
 		return allMatches;
 	}
@@ -53,8 +53,7 @@ public class StreamAllMatch {
 	 * */
 	public boolean allMatchDemoJava8(List<? extends Number> list) {
 		
-		boolean allMatches = list.stream()
-								 .allMatch(value -> value != null);
+		boolean allMatches = list.stream().allMatch(value -> value != null);
 		
 		return allMatches;
 	}
@@ -65,8 +64,7 @@ public class StreamAllMatch {
 	 * */
 	public boolean allMatchDemo(List<? extends Number> list, double val){
 		
-		boolean allMatches = list.stream()
-								 .allMatch(value -> value.doubleValue() > val);
+		boolean allMatches = list.stream().allMatch(value -> value.doubleValue() > val);
 		
 		return allMatches;
 	}
@@ -82,8 +80,7 @@ public class StreamAllMatch {
 	 * */
 	public boolean allMatchDemo(List<String> list, int length){
 		
-		boolean allMatches = list.stream()
-								 .allMatch(value -> value.length() > length);
+		boolean allMatches = list.stream().allMatch(value -> value.length() > length);
 		
 		return allMatches;
 	}
