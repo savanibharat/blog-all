@@ -10,7 +10,7 @@ public final class StudentDataSet {
 		List<Student> students = new ArrayList<Student>();
 		students.addAll(dataSet());
 		students.stream()
-		.forEach(s-> System.out.println(s.name().lastName()+", "+s.name().firstName()));
+				.forEach(s-> System.out.println(s.name().lastName()+", "+s.name().firstName()));
 		Collections.sort(students);
 		System.out.println();
 		students.stream()
