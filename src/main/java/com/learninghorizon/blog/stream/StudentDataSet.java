@@ -9,6 +9,7 @@ public final class StudentDataSet {
 	public static void main(String[] args) {
 		List<Student> students = new ArrayList<Student>();
 		students.addAll(dataSet());
+		System.out.println(dataSet());
 		students.stream()
 			.forEach(s-> System.out.println(s.name().lastName()+", "+s.name().firstName()));
 		Collections.sort(students);
@@ -31,7 +32,7 @@ public final class StudentDataSet {
 								  .pinCode("49508")
 								  .build();
 		Student student1 = new Student(name1, address1, Integer.valueOf(61), 
-				Integer.valueOf(564), Gender.MALE);
+				Integer.valueOf(564), Gender.MALE, Grade.SENIOR);
 		students.add(student1);
 		
 		Name name2 = new Name("Jane", "Doe");
@@ -43,7 +44,7 @@ public final class StudentDataSet {
 				  				  .pinCode("20200")
 				  				  .build();
 		Student student2 = new Student(name2, address2, Integer.valueOf(52),
-				521, Gender.UNSPECIFIED);
+				521, Gender.UNSPECIFIED, Grade.FRESHMAN);
 		students.add(student2);
 		
 		Name name3 = new Name("Theresa", "Burton");
@@ -55,7 +56,7 @@ public final class StudentDataSet {
   								  .pinCode("60605")
   								  .build();
 		Student student3 = new Student(name3, address3, Integer.valueOf(15),
-				281, Gender.FEMALE);
+				281, Gender.FEMALE, Grade.JUNIOR);
 		students.add(student3);
 		
 		Name name4 = new Name("Basil", "Ballard");
@@ -67,7 +68,7 @@ public final class StudentDataSet {
 								  .pinCode("48219")
 								  .build();
 		Student student4 = new Student(name4, address4, Integer.valueOf(27),
-				228, Gender.MALE);
+				228, Gender.MALE, Grade.SENIOR);
 		students.add(student4);
 		
 		Name name5 = new Name("Tomas", "Cruz");
@@ -79,7 +80,7 @@ public final class StudentDataSet {
 								  .pinCode("23320")
 								  .build();
 		Student student5 = new Student(name5, address5, Integer.valueOf(83),
-				454, Gender.UNSPECIFIED);
+				454, Gender.UNSPECIFIED, Grade.JUNIOR);
 		students.add(student5);
 		
 		Name name6 = new Name("Clyde", "Bell");
@@ -91,7 +92,7 @@ public final class StudentDataSet {
 								  .pinCode("39402")
 								  .build();
 		Student student6 = new Student(name6, address6, Integer.valueOf(41),
-				715, Gender.FEMALE);
+				715, Gender.FEMALE, Grade.SOPHOMORE);
 		students.add(student6);
 		
 		Name name7 = new Name("Marcos", "Bell");
@@ -103,7 +104,7 @@ public final class StudentDataSet {
 								  .pinCode("21201")
 								  .build();
 		Student student7 = new Student(name7, address7, Integer.valueOf(57),
-				527, Gender.MALE);
+				527, Gender.MALE, Grade.FRESHMAN);
 		students.add(student7);
 		
 		Name name8 = new Name("Michelle", "Scott");
@@ -115,7 +116,7 @@ public final class StudentDataSet {
 								  .pinCode("78401")
 								  .build();
 		Student student8 = new Student(name8, address8, Integer.valueOf(16),
-				482, Gender.UNSPECIFIED);
+				482, Gender.UNSPECIFIED, Grade.FRESHMAN);
 		students.add(student8);
 		
 		Name name9 = new Name("Mary", "Derby");
@@ -127,19 +128,19 @@ public final class StudentDataSet {
 								  .pinCode("02210")
 								  .build();
 		Student student9 = new Student(name9, address9, Integer.valueOf(57),
-				101, Gender.FEMALE);
+				101, Gender.FEMALE, Grade.SOPHOMORE);
 		students.add(student9);
-		
+			
 		Name name10 = new Name("Margaret", "Towery");
 		Address address10 = new Address.AddressBuilder()
-								   .address1("970 Amethyst Drive")
+								 .address1("970 Amethyst Drive")
 								   .address2("APT 101")
 								   .city("Lansing")
 								   .country("USA")
 								   .pinCode("48933")
 								   .build();
 		Student student10 = new Student(name10, address10, Integer.valueOf(17),
-				129, Gender.FEMALE);
+				129, Gender.FEMALE, Grade.JUNIOR);
 		students.add(student10);
 		
 		return Collections.unmodifiableList(students);
