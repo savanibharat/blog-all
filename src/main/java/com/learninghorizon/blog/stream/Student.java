@@ -13,18 +13,21 @@ public final class Student implements Comparable<Student>{
 	private final Integer age;
 	private final Integer favoriteNumber;
 	private final Gender gender;
+	private final Grade grade;
 	
 	public Student(
 			final Name name, 
 			final Address address, 
 			final Integer age, 
 			final Integer favoriteNumber,
-			final Gender gender) {
+			final Gender gender,
+			final Grade grade) {
 		this.name = name;
 		this.address = address;
 		this.age = age;
 		this.favoriteNumber = favoriteNumber;
 		this.gender = gender;
+		this.grade = grade;
 	}
 
 	public Address address() {
@@ -47,19 +50,13 @@ public final class Student implements Comparable<Student>{
 		return gender;
 	}
 	
+	public Grade grade(){
+		return grade;
+	}
+	
 	@Override
 	public int compareTo(Student that) {
-		int lastName = this.name().lastName().toLowerCase()
-				.compareTo(that.name().lastName().toLowerCase());
-		if(lastName == 0){
-			int firstName = this.name().firstName().toLowerCase()
-					.compareTo(that.name().firstName().toLowerCase());
-			if(firstName == 0){
-				return 0;
-			}
-		}
-		return lastName;
-		
+		return this.name.compareTo(that.name);
 	}
 	
 	@Override
@@ -101,6 +98,7 @@ public final class Student implements Comparable<Student>{
 		map.put("studentAge", this.age.toString());
 		map.put("favoriteNumber", String.valueOf(this.favoriteNumber));
 		map.put("gender", this.gender.toString());
+		map.put("grade", this.grade.toString());
 		return map.toString();
 	}
 	

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Name class contains essential details for Name.
  * */
-public final class Name {
+public final class Name implements Comparable<Name>{
 
 	private final String firstName;
 	private final String lastName;
@@ -25,6 +25,20 @@ public final class Name {
 	public String lastName() {
 		return lastName;
 	}
+	
+	@Override
+    public int compareTo(Name name) {
+        int lastName = this.lastName().toLowerCase()
+                .compareTo(name.lastName().toLowerCase());
+        if(lastName == 0){
+            int firstName = this.firstName().toLowerCase()
+                    .compareTo(name.firstName().toLowerCase());
+            if(firstName != 0){
+                return firstName;
+            }
+        }
+        return lastName;
+    }
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
