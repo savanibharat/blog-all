@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
+ * Address class.
  * */
 public final class Address {
 
@@ -13,7 +14,8 @@ public final class Address {
 	private final String city;
 	private final String country;
 
-	private Address(final AddressBuilder addressBuilder) {
+	private Address(
+			final AddressBuilder addressBuilder) {
 		super();
 		this.address1 = addressBuilder.address1;
 		this.address2 = addressBuilder.address2;
