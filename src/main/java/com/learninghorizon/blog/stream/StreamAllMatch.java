@@ -3,6 +3,7 @@ package com.learninghorizon.blog.stream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import junit.framework.Assert;
 
@@ -11,7 +12,10 @@ public class StreamAllMatch {
 	public static void main(String[] args) {
 
 		StreamAllMatch streamAllMatch = new StreamAllMatch();
-		List<Integer> list = Arrays.asList(7, 6, 4, 32, 32, 14, 3, 26);
+		List<Integer> list = Arrays.asList();
+		
+		System.out.println(list.stream().collect(Collectors.toList()));
+		
 		boolean allmatches = streamAllMatch.allMatchDemo(list);
 		System.out.println(allmatches);
 		
