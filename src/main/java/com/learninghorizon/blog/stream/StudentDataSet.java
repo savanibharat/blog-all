@@ -136,7 +136,7 @@ public final class StudentDataSet {
 								 .address1("970 Amethyst Drive")
 								   .address2("APT 101")
 								   .city("Lansing")
-								   .country("USA")
+								   .country("Canada")
 								   .pinCode("48933")
 								   .build();
 		Student student10 = new Student(name10, address10, Integer.valueOf(17),
