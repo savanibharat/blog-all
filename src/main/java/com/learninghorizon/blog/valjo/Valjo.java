@@ -107,7 +107,9 @@ public final class Valjo implements Comparable<Valjo> {
 	 * */
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		throw new UnsupportedOperationException("Clone not supported use with(Valjo) method.");
+		throw new UnsupportedOperationException(
+			"Clone not supported use with(Valjo) method."
+		);
 	}
 	
 	/* 
