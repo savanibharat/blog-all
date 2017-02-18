@@ -5,7 +5,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.BiConsumer;
@@ -97,7 +96,7 @@ public class StreamExamplesForStudent {
 		
 		//using lambda operator
 		boolean allMatch = students.stream()
-							.allMatch(predicate)(s -> s.address().country().equals("USA"));
+							.allMatch(s -> s.address().country().equals("USA"));
 		System.out.println(allMatch);
 	}
 

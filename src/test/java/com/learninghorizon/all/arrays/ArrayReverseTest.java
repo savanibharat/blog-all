@@ -48,12 +48,12 @@ public class ArrayReverseTest {
 
 	@Test
 	public void testDoubleArray() {
-		Assert.assertEquals(dReverse, ArrayReverse.reverse(d), 0.00);
+		Assert.assertEquals(dReverse, ArrayReverse.reverse(d));
 	}
 
 	@Test
 	public void testFloatArray() {
-		Assert.assertEquals(fReverse, ArrayReverse.reverse(f), 0.0f);
+		Assert.assertEquals(fReverse, ArrayReverse.reverse(f));
 	}
 
 	@Test
@@ -89,12 +89,12 @@ public class ArrayReverseTest {
 
 	@Test
 	public void testDoubleArrayInPlace() {
-		Assert.assertEquals(dReverse, ArrayReverse.reverseInPlace(d), 0.00);
+		Assert.assertEquals(dReverse, ArrayReverse.reverseInPlace(d));
 	}
 
 	@Test
 	public void testFloatArrayInPlace() {
-		Assert.assertEquals(fReverse, ArrayReverse.reverseInPlace(f), 0.0f);
+		Assert.assertEquals(fReverse, ArrayReverse.reverseInPlace(f));
 	}
 
 	@Test

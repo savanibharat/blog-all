@@ -3,12 +3,17 @@ package com.learninghorizon.blog.stream;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 public class StreamFilter {
 
 	public static void main(String[] args) {
 		
 		List<Student> students = StudentDataSet.dataSet();
+		
+		IntStream.of(1,2,3)
+		.allMatch(val -> val > 0);
+		
 		StreamFilter filterDemo = new StreamFilter();
 		filterDemo.getStudentsFromNYC(students);
 		filterDemo.getStudentsFromNYCLambda(students);

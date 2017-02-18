@@ -1,92 +1,50 @@
 package com.learninghorizon.blog.stream;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
-import junit.framework.Assert;
 
 public class StreamAllMatch {
 
 	public static void main(String[] args) {
-
-		StreamAllMatch streamAllMatch = new StreamAllMatch();
-		List<Integer> list = Arrays.asList();
 		
-		System.out.println(list.stream().collect(Collectors.toList()));
+		List<String> names = new ArrayList<String>();
+		names.add("John");
+		names.add("Jane");
+		names.add("Jonny");
+		names.add("Jack");
+		names.add("Jackie");
+		boolean namesStartsWithJ = 
+		names.stream()
+			 .allMatch(name -> name.startsWith("J"));
 		
-		boolean allmatches = streamAllMatch.allMatchDemo(list);
-		System.out.println(allmatches);
+		System.out.println("Does all names start with J: " + namesStartsWithJ);
 		
-		Assert.assertTrue(streamAllMatch.allMatchDemo(list));
-		Assert.assertTrue(streamAllMatch.allMatchDemoJava8(list));
+		
+		
+//		checkIfAllStudentsAreFromUSA(StudentDataSet.dataSet());
 	}
-
+	
 	/**
-	 * Below method uses Anonymous Inner class syntax 
-	 * on Predicate<T> interface.
-	 * 
-	 * @return true if all elements in List are not null
-	 * @return false if List contains null elements.
-	 * 
-	 * @throws IllegalArgumentException if List is null
+	 * Check if all Students are from USA country.
 	 * */
-	public boolean allMatchDemo(List<? extends Number> list) {
+	public static void checkIfAllStudentsAreFromUSA(List<Student> students){
 
-		if(list == null){
-			throw new NullPointerException("Input list must not be null");
-		}
-		
-		boolean allMatches =
-
-			list.stream()
-				.allMatch(new Predicate<Number>() {
+		//using anonymous inner class.
+		boolean allMatchFromUSA = 
+		students.stream()
+				.allMatch(new Predicate<Student>() {
 					@Override
-					public boolean test(Number value) {
-						return value != null;
+					public boolean test(final Student student) {
+						return student.address().country().equals("USA");
 					}
 				});
-
-		return allMatches;
-	}
-
-	/**
-	 * As Predicate<T> interface is functional interface we
-	 * can use Lambda Operator.
-	 * */
-	public boolean allMatchDemoJava8(List<? extends Number> list) {
+		System.out.println(allMatchFromUSA);
 		
-		boolean allMatches = list.stream().allMatch(value -> value != null);
-		
-		return allMatches;
-	}
-	
-	/**
-	 * All elements in List must be greater than value passed
-	 * in parameter.
-	 * */
-	public boolean allMatchDemo(List<? extends Number> list, double val){
-		
-		boolean allMatches = list.stream().allMatch(value -> value.doubleValue() > val);
-		
-		return allMatches;
-	}
-	
-	/**
-	 * All elements in List must have length greater than length
-	 * passed in parameter.
-	 * 
-	 * @return {@code true} if all elements have length greater than length
-	 * 		   passed in parameter, otherwise {@code false}.
-	 * 
-	 * @throws NullPointerException if List is null. 
-	 * */
-	public boolean allMatchDemo(List<String> list, int length){
-		
-		boolean allMatches = list.stream().allMatch(value -> value.length() > length);
-		
-		return allMatches;
+		//using lambda operator
+		boolean allMatch = students.stream()
+							.allMatch(s -> s.address().country().equals("USA"));
+		System.out.println(allMatch);
 	}
 	
 }

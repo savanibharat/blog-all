@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Numbers {
+public final class Numbers {
 
 	private final int start;
 	private final int end;
@@ -34,7 +34,7 @@ public class Numbers {
 
 	public static void main(String[] args) {
 		
-		Predicate<Integer> evens = p -> p % 2 == 0;
+		final Predicate<Integer> evens = p -> p % 2 == 0;
 		Numbers n = new Numbers(0, 10, evens);
 		System.out.println(n.callMe());
 		
